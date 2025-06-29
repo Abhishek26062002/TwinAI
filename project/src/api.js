@@ -1,4 +1,4 @@
-const BASE_URL = 'https://rz7fp2tv-8006.inc1.devtunnels.ms/';
+const BASE_URL = 'https://rz7fp2tv-8006.inc1.devtunnels.ms';
 
 // Get user ID from session storage
 const getUID = () => sessionStorage.getItem('uid');
