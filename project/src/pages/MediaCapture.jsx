@@ -234,7 +234,7 @@ const MediaCapture = () => {
     }, 200);
     
     // Upload to API
-    const response = await fetch('https://rz7fp2tv-8006.inc1.devtunnels.ms/', {
+    const response = await fetch('https://rz7fp2tv-8006.inc1.devtunnels.ms/voice/ivc/create', {
       method: 'POST',
       body: formData,
     });
