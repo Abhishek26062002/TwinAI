@@ -1,0 +1,228 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-neutral-800;
+  }
+  body {
+    @apply bg-black text-white transition-colors duration-200 font-sans;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.01em;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-white font-semibold;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  
+  p {
+    @apply text-neutral-300;
+    line-height: 1.7;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-white hover:bg-neutral-200 text-black font-medium px-6 py-3 rounded-lg transition-all duration-200 shadow-sm hover:shadow-md;
+  }
+  
+  .btn-secondary {
+    @apply bg-neutral-900 hover:bg-neutral-800 border border-neutral-700 text-white font-medium px-6 py-3 rounded-lg transition-all duration-200;
+  }
+  
+  .btn-skip {
+    @apply bg-transparent hover:bg-neutral-900 border border-neutral-600 text-neutral-400 hover:text-white font-medium px-4 py-2 rounded-lg transition-all duration-200 text-sm;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-lg border border-neutral-700 bg-black text-white placeholder:text-neutral-500 focus:ring-2 focus:ring-white focus:border-transparent transition-all duration-200;
+  }
+  
+  .card {
+    @apply bg-black border border-neutral-800 rounded-xl shadow-sm;
+  }
+
+  .interactive-card {
+    @apply hover:border-neutral-700 transition-all duration-300;
+  }
+
+  .section-header {
+    @apply mb-6;
+  }
+
+  .floating-label {
+    @apply relative;
+  }
+  
+  .text-primary {
+    @apply text-white;
+  }
+  
+  .text-secondary {
+    @apply text-neutral-300;
+  }
+  
+  .text-muted {
+    @apply text-neutral-500;
+  }
+
+  /* Beautiful blob button */
+  .blob-button {
+    @apply relative px-8 py-4 bg-white text-black font-semibold rounded-2xl overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95;
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+  }
+
+  .blob-button .blob {
+    @apply absolute w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full opacity-30 animate-pulse;
+    filter: blur(10px);
+  }
+
+  .blob-button .blob:nth-child(1) {
+    top: -20px;
+    left: -20px;
+    animation-delay: 0s;
+  }
+
+  .blob-button .blob:nth-child(2) {
+    top: -10px;
+    right: -20px;
+    animation-delay: 0.5s;
+  }
+
+  .blob-button .blob:nth-child(3) {
+    bottom: -20px;
+    left: -10px;
+    animation-delay: 1s;
+  }
+
+  .blob-button .blob:nth-child(4) {
+    bottom: -10px;
+    right: -10px;
+    animation-delay: 1.5s;
+  }
+
+  .blob-button .text {
+    @apply relative z-10 flex items-center justify-center;
+  }
+
+  /* Progress bar styling */
+  .progress-bar {
+    @apply bg-gray-800 rounded-full overflow-hidden;
+  }
+
+  .progress-fill {
+    @apply bg-gradient-to-r from-purple-500 via-pink-500 to-blue-500 rounded-full transition-all duration-1000 ease-out;
+  }
+
+  /* Markdown prose styling for dark theme */
+  .prose-invert {
+    color: #ffffff;
+  }
+  
+  .prose-invert strong {
+    color: #ffffff;
+    font-weight: 600;
+  }
+  
+  .prose-invert em {
+    color: #d4d4d8;
+  }
+  
+  .prose-invert code {
+    background-color: #262626;
+    color: #d4d4d8;
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+  }
+  
+  .prose-invert pre {
+    background-color: #262626;
+    color: #ffffff;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 0.5rem 0;
+  }
+  
+  .prose-invert ul, .prose-invert ol {
+    margin: 0.5rem 0;
+  }
+  
+  .prose-invert li {
+    color: #d4d4d8;
+    margin: 0.25rem 0;
+  }
+  
+  .prose-invert blockquote {
+    border-left: 4px solid #525252;
+    padding-left: 1rem;
+    font-style: italic;
+    color: #a3a3a3;
+    margin: 0.5rem 0;
+  }
+  
+  .prose-invert h1, .prose-invert h2, .prose-invert h3 {
+    color: #ffffff;
+    margin-bottom: 0.5rem;
+  }
+  
+  .prose-invert a {
+    color: #60a5fa;
+    text-decoration: underline;
+  }
+  
+  .prose-invert a:hover {
+    color: #93c5fd;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+/* Custom scrollbar for dark theme */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #404040;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
