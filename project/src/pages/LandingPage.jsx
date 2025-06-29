@@ -378,6 +378,10 @@ const LandingPage = () => {
   }, []);
 
   const handleGetStarted = () => {
+    const getUID = () => sessionStorage.getItem('uid');
+    if(getUID){
+      navigate('/share');
+    }
     gsap.to(buttonRef.current, {
       scale: 0.95,
       duration: 0.1,
